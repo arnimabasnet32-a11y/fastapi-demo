@@ -37,3 +37,4 @@ async def deleteAnime(id: int, session: SessionDep):
     session.delete(anime)
     session.commit()
     return {"ok": True}
+

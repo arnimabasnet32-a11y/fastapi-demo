@@ -26,7 +26,8 @@ class Anime(SQLModel, table=True):
     country: str = Field()
     director: str = Field()
     created_at: datetime = Field()
-    update_at: datetime = Field()
+    updated_at: datetime = Field()
+    category_id: int = Field(foreign_key="categories.id")
 
 class AnimeCast(SQLModel, table=True):
     __tablename__ = "anime_casts"
@@ -49,7 +50,7 @@ class Genre(SQLModel, table=True):
     slug: str = Field()
     description: str = Field()
     created_at: datetime = Field()
-    update_at: datetime = Field()
+    updated_at: datetime = Field()
 
 class Review(SQLModel, table=True):
     __tablename__="reviews"
@@ -92,3 +93,4 @@ class Slider(SQLModel, table=True):
     details: str = Field()
     url: str = Field()
     button_label: str = Field()
+
